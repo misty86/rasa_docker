@@ -5,8 +5,12 @@ USER root
 # WORKDIR /app
 # COPY . /app
 COPY ./data /app/data
-RUN  rasa train
+#обучение модели
+#RUN  rasa train
 VOLUME /app
 VOLUME /app/data
 VOLUME /app/models
-CMD ["run", "--enable-api"]
+#для запуска модели обученной вне
+CMD ["run", "-m", "test_model.tar.gz","--enable-api"]
+#для запуска модели обученной в контейнере
+#CMD ["run", "--enable-api"]
