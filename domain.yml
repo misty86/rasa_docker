@@ -1,0 +1,35 @@
+version: "3.0"
+
+intents:
+  - greet
+  - time
+  - location
+  - job
+  - no_payment
+  - el_money
+  - card
+  - ya_money
+  - payment_ways
+  - person
+  
+entities:
+  - time
+  
+slots:
+  time:
+    mappings:
+    - type: from_entity
+      entity: time
+    type:
+      any
+
+responses:
+  utter_greet:
+  - text: "Привет"
+
+  utter_time:
+  - text: "{time}"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

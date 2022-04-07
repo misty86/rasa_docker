@@ -1,0 +1,17 @@
+version: '3'
+services:
+    rasa:
+      container_name: "rasa_server"
+      user: root
+      build: 
+        context:  .
+      volumes:
+      - "./:/app"
+      ports: 
+        - "5005:5005"
+    duckling:
+      image: 'rasa/duckling:latest'
+      container_name: duckling
+      restart: always
+      ports:
+        - '8000:8000'
