@@ -4,7 +4,6 @@ language: ru
 
 pipeline:
    - name: WhitespaceTokenizer
-   - name: RegexFeaturizer
    - name: LexicalSyntacticFeaturizer
    - name: CountVectorsFeaturizer
      analyzer: char_wb
@@ -16,12 +15,8 @@ pipeline:
    - name: ResponseSelector
      epochs: 100
    - name: FallbackClassifier
-     threshold: 0.7
+     threshold: 0.85
      ambiguity_threshold: 0.1
-   - name: "DucklingEntityExtractor"
-     url: "http://duckling:8000"
-     dimensions: ["time"]
-     locale: "ru_RU"
 
 policies:
   - name: MemoizationPolicy

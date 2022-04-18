@@ -2,12 +2,3 @@ version: "3.0"
 
 stories:
 
-- story: greet
-  steps:
-  - intent: greet
-  - action: utter_greet
-
-- story: time_recognition
-  steps:
-  - intent: time
-  - action: utter_time
