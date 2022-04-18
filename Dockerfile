@@ -4,4 +4,4 @@ COPY . /app
 USER root
 VOLUME /app
 VOLUME /app/models
-CMD ["run", "-m", "test_model.tar.gz","--enable-api"]
+CMD ["run", "-m", "pre_prod_model.tar.gz","--enable-api"]
