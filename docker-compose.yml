@@ -9,3 +9,9 @@ services:
       - "./:/app"
       ports: 
         - "5005:5005"
+    duckling:
+      image: 'rasa/duckling:latest'
+      container_name: duckling
+      restart: always
+      ports:
+        - '8002:8002'
